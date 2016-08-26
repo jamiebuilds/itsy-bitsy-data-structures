@@ -178,7 +178,7 @@
 \*** ===================================================================== ***/
 
 /**
- * Big-O Notation is a way to roughly measuring the performance of algorithms
+ * Big-O Notation is a way of roughly measuring the performance of algorithms
  * in order to compare one against another when discussing them.
  *
  * Big-O is a mathematical notation that we borrowed in computer science to
@@ -241,7 +241,7 @@
  *                            Accessing    Searching    Inserting    Deleting
  *    -------------------------------------------------------------------------
  *                  Array     AWESOME!!    OKAY         OKAY         OKAY
- *            Linked List     OKAY         OKAY         AWESOME!!    AWSOME!!
+ *            Linked List     OKAY         OKAY         AWESOME!!    AWESOME!!
  *     Binary Search Tree     GREAT!       GREAT!       GREAT!       GREAT!
  *
  * Even further, some actions will have a different "average" performance and a
