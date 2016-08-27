@@ -574,7 +574,7 @@ class HashTable {
   }
 
   /**
-   * Next, lets define out "get" function so we have a way of accessing values
+   * Next, lets define our "get" function so we have a way of accessing values
    * by their key.
    *
    * HashTable access is constant O(1) - "AWESOME!!"
@@ -1107,7 +1107,7 @@ class LinkedList {
  * The remaining two data structures we are going to cover are both in the
  * "tree" family.
  *
- * Much like real like, there are many different types of tree data structures.
+ * Much like real life, there are many different types of tree data structures.
  *
  *     Binary Trees:
  *       AA Tree, AVL Tree, Binary Search Tree, Binary Tree, Cartesian Tree,
