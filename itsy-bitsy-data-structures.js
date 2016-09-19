@@ -135,8 +135,7 @@
  * Data structures are implemented with algorithms, and algorithms are
  * implemented with data structures. It's data structures and algorithms all
  * the way down until you reach the micro-scopic people with punch cards that
- * control the computer. (Yeah– Intel is enslaving super tiny people. Wake up
- * sheeple!)
+ * control the computer. (That's how computers work right?)
  *
  * Any given task can be implemented in an infinite number of ways. So for
  * common tasks there are often many different algorithms that people have come up
