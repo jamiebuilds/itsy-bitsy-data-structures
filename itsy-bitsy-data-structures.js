@@ -743,7 +743,7 @@ class Stack {
 \*** ===================================================================== ***/
 
 /**
- * Next, we're going to build a queue which is complimentary to stacks. The
+ * Next, we're going to build a queue which is complementary to stacks. The
  * difference is that this time you remove items from the start of the queue
  * rather than the end. Removing the oldest items rather than the most recent.
  *
