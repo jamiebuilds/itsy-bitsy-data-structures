@@ -1,4 +1,4 @@
-<a href="itsy-bitsy-data-structures.js"><img width="731" alt="ITSY BITSY DATA STRUCTURES" src="https://cloud.githubusercontent.com/assets/952783/17043757/c4ca3f86-4f6e-11e6-9b75-28156635a0d8.png"/></a>
+[![Itsy Bitsy Data Structures](https://cloud.githubusercontent.com/assets/952783/21579289/5754b03a-cf75-11e6-976c-f67a271aedaa.png)](itsy-bitsy-data-structures.js)
 
 ***Welcome to Itsy Bitsy Data Structures!***
 
