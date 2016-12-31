@@ -391,8 +391,8 @@ class List {
     if (this.length === 0) return;
 
     // Get the last value, stop storing it, and return it.
-    var lastAddress = this.length - 1;
-    var value = this.memory[lastAddress];
+    let lastAddress = this.length - 1;
+    let value = this.memory[lastAddress];
     delete this.memory[lastAddress];
     this.length--;
 
@@ -429,13 +429,13 @@ class List {
 
   unshift(value) {
     // Store the value we are going to add to the start.
-    var previous = value;
+    let previous = value;
 
     // Iterate through each item...
-    for (var address = 0; address < this.length; address++) {
+    for (let address = 0; address < this.length; address++) {
       // replacing the "current" value with the "previous" value and storing the
       // "current" value for the next iteration.
-      var current = this.memory[address];
+      let current = this.memory[address];
       this.memory[address] = previous;
       previous = current;
     }
@@ -465,10 +465,10 @@ class List {
     // Don't do anything if we don't have any items.
     if (this.length === 0) return;
 
-    var value = this.memory[0];
+    let value = this.memory[0];
 
     // Iterate through each item...
-    for (var address = 0; address < this.length; address++) {
+    for (let address = 0; address < this.length; address++) {
       // and replace them with the next item in the list.
       this.memory[address] = this.memory[address + 1];
     }
@@ -565,10 +565,10 @@ class HashTable {
    */
 
   hashKey(key) {
-    var hash = 0;
-    for (var index = 0; index < key.length; index++) {
+    let hash = 0;
+    for (let index = 0; index < key.length; index++) {
       // Oh look– magic.
-      var code = key.charCodeAt(index);
+      let code = key.charCodeAt(index);
       hash = ((hash << 5) - hash) + code | 0;
     }
     return hash;
@@ -583,7 +583,7 @@ class HashTable {
 
   get(key) {
     // We start by turning our key into an address.
-    var address = this.hashKey(key);
+    let address = this.hashKey(key);
     // Then we simply return whatever is at that address.
     return this.memory[address];
   }
@@ -597,7 +597,7 @@ class HashTable {
 
   set(key, value) {
     // Again we start by turning the key into an address.
-    var address = this.hashKey(key);
+    let address = this.hashKey(key);
     // Then just set the value at that address.
     this.memory[address] = value;
   }
@@ -610,7 +610,7 @@ class HashTable {
 
   remove(key) {
     // As always, we hash the key to get an address.
-    var address = this.hashKey(key);
+    let address = this.hashKey(key);
     // Then, if it exists, we `delete` it.
     if (this.memory[address]) {
       delete this.memory[address];
@@ -897,10 +897,7 @@ class Graph {
    */
 
   addNode(value) {
-    this.nodes.push({
-      value: value,
-      lines: []
-    });
+    return this.nodes.push({ value, lines: [] });
   }
 
   /**
@@ -914,7 +911,7 @@ class Graph {
    */
 
   find(value) {
-    return this.nodes.find(function(node) {
+    return this.nodes.find(node => {
       return node.value === value;
     });
   }
@@ -925,8 +922,8 @@ class Graph {
 
   addLine(startValue, endValue) {
     // Find the nodes for each value.
-    var startNode = this.find(startValue);
-    var endNode = this.find(endValue);
+    let startNode = this.find(startValue);
+    let endNode = this.find(endValue);
 
     // Freak out if we didn't find one or the other.
     if (!startNode || !endNode) {
@@ -1031,11 +1028,11 @@ class LinkedList {
     }
 
     // Start with the head of the list.
-    var current = this.head;
+    let current = this.head;
 
     // Slide through all of the items using node.next until we reach the
     // specified position.
-    for (var index = 0; index < position; index++) {
+    for (let index = 0; index < position; index++) {
       current = current.next;
     }
 
@@ -1051,10 +1048,7 @@ class LinkedList {
 
   add(value, position) {
     // First create a node to hold our value.
-    var node = {
-      value: value,
-      next: null
-    };
+    let node = { value, next: null };
 
     // We need to have a special case for nodes being inserted at the head.
     // We'll set the "next" field to the current head and then replace it with
@@ -1067,8 +1061,8 @@ class LinkedList {
     // between the current node and the previous node.
     } else {
       // First, find the previous node and the current node.
-      var prev = this.get(position - 1);
-      var current = prev.next;
+      let prev = this.get(position - 1);
+      let current = prev.next;
       // Then insert the new node in between them by setting its "next" field
       // to the current node and updating the previous node's "next" field to
       // the new one.
@@ -1098,7 +1092,7 @@ class LinkedList {
     // For any other position we need to look up the previous node and set it
     // to the node after the current position.
     } else {
-      var prev = this.get(position - 1);
+      let prev = this.get(position - 1);
       prev.next = prev.next.next;
     }
 
@@ -1233,10 +1227,7 @@ class Tree {
    */
 
   add(value, parentValue) {
-    var newNode = {
-      value: value,
-      children: []
-    };
+    let newNode = { value, children: [] };
 
     // If there is no root, just set it to the new node.
     if (this.root === null) {
@@ -1246,7 +1237,7 @@ class Tree {
 
     // Otherwise traverse the entire tree and find a node with a matching value
     // and add the new node to its children.
-    this.traverse(function(node) {
+    this.traverse(node => {
       if (node.value === parentValue) {
         node.children.push(newNode);
       }
@@ -1342,7 +1333,7 @@ class BinarySearchTree {
 
   contains(value) {
     // We start at the root.
-    var current = this.root;
+    let current = this.root;
 
     // We're going to keep running as long as we have another node to visit.
     // If we reach a `left` or `right` that is `null` then this loop ends.
@@ -1377,7 +1368,7 @@ class BinarySearchTree {
 
   add(value) {
     // First let's setup our node.
-    var node = {
+    let node = {
       value: value,
       left: null,
       right: null
@@ -1391,7 +1382,7 @@ class BinarySearchTree {
     }
 
     // We start at the root.
-    var current = this.root;
+    let current = this.root;
 
     // We're going to loop until we've either added our item or discovered it
     // already exists in the tree.
@@ -1459,12 +1450,12 @@ class BinarySearchTree {
 
 // Just exporting everything for the tests...
 module.exports = {
-  List: List,
-  HashTable: HashTable,
-  Stack: Stack,
-  Queue: Queue,
-  Graph: Graph,
-  LinkedList: LinkedList,
-  Tree: Tree,
-  BinarySearchTree: BinarySearchTree
+  List,
+  HashTable,
+  Stack,
+  Queue,
+  Graph,
+  LinkedList,
+  Tree,
+  BinarySearchTree
 };

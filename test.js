@@ -1,7 +1,16 @@
 'use strict';
 
-var assert = require('assert');
-var ItsyBitsyDataStructures = require('./itsy-bitsy-data-structures');
+const assert = require('assert');
+const {
+  List,
+  HashTable,
+  Stack,
+  Queue,
+  Graph,
+  LinkedList,
+  Tree,
+  BinarySearchTree,
+} = require('./itsy-bitsy-data-structures');
 
 /**
  * ============================================================================
@@ -10,7 +19,7 @@ var ItsyBitsyDataStructures = require('./itsy-bitsy-data-structures');
  */
 
 (function() {
-  var list = new ItsyBitsyDataStructures.List();
+  var list = new List();
 
   list.push(1);
   list.unshift(2);
@@ -32,7 +41,7 @@ var ItsyBitsyDataStructures = require('./itsy-bitsy-data-structures');
  */
 
 (function() {
-  var hashTable = new ItsyBitsyDataStructures.HashTable();
+  var hashTable = new HashTable();
 
   hashTable.set('foo', 'bar');
   assert.equal(hashTable.get('foo'), 'bar');
@@ -48,7 +57,7 @@ var ItsyBitsyDataStructures = require('./itsy-bitsy-data-structures');
  */
 
 (function() {
-  var stack = new ItsyBitsyDataStructures.Stack();
+  var stack = new Stack();
 
   stack.push(1);
   stack.push(2);
@@ -66,7 +75,7 @@ var ItsyBitsyDataStructures = require('./itsy-bitsy-data-structures');
  */
 
 (function() {
-  var queue = new ItsyBitsyDataStructures.Queue();
+  var queue = new Queue();
 
   queue.enqueue(1);
   queue.enqueue(2);
@@ -84,7 +93,7 @@ var ItsyBitsyDataStructures = require('./itsy-bitsy-data-structures');
  */
 
 (function() {
-  var graph = new ItsyBitsyDataStructures.Graph();
+  var graph = new Graph();
 
   graph.addNode(1);
   graph.addNode(2);
@@ -109,7 +118,7 @@ var ItsyBitsyDataStructures = require('./itsy-bitsy-data-structures');
  */
 
 (function() {
-  var linkedList = new ItsyBitsyDataStructures.LinkedList();
+  var linkedList = new LinkedList();
 
   linkedList.add(1, 0);
   linkedList.add(2, 1);
@@ -136,7 +145,7 @@ var ItsyBitsyDataStructures = require('./itsy-bitsy-data-structures');
  */
 
 (function() {
-  var tree = new ItsyBitsyDataStructures.Tree();
+  var tree = new Tree();
 
   tree.add(1);
   tree.add(2, 1);
@@ -159,7 +168,7 @@ var ItsyBitsyDataStructures = require('./itsy-bitsy-data-structures');
  */
 
 (function() {
-  var binarySearchTree = new ItsyBitsyDataStructures.BinarySearchTree();
+  var binarySearchTree = new BinarySearchTree();
 
   // root
   binarySearchTree.add(4);
